@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="img/paltaFavicon.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>NutriGM</title>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+      <div class="logo-container">
+      <a href="#"><img src="img/home.png" alt="Inicio" class="home-icon" /></a>
+      <a href="index.html" class="logo-text">NutriGM</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#">Cerrar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div class="medico-panel">
+    <h2>
+      Bienvenido, Dr. <span id="nombre-medico">[Nombre del Médico]</span><!--MODIFICAR LINEA-->
+    </h2>
+
+    <h3>Pacientes asignados:</h3>
+    <ul class="paciente-lista">
+      <li>
+        Juan Pérez
+        <button class="nota-btn" onclick="abrirModal('Juan Pérez')">+</button>
+      </li>
+      <li>
+        María Gómez
+        <button class="nota-btn" onclick="abrirModal('María Gómez')">+</button>
+      </li>
+      <li>
+        Laura Fernández
+        <button class="nota-btn" onclick="abrirModal('Laura Fernández')">+</button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- MODAL PARA NOTAS -->
+  <div id="notaModal" class="modal">
+    <div class="modal-contenido">
+      <span class="cerrar-modal" onclick="cerrarModal()">&times;</span>
+      <h3>Agregar nota para <span id="paciente-actual"></span></h3>
+      <textarea placeholder="Escriba su nota aquí..."></textarea>
+      <button onclick="guardarNota()">Guardar Nota</button>
+    </div>
+  </div>
+
+<!--FOOTER-->
+  <footer>
+  <div class="footer-container">
+    <div class="footer-section">
+      <h4>Menú</h4>
+      <ul>
+        <li><a href="#">Cerrar Sesión</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-section">
+      <h4>Seguinos</h4>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-section">
+      <h4>Contacto</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Perito Moreno 123, Ciudad</p>
+      <p><i class="fas fa-clock"></i> Horarios de atención: Lun a Vie - 9:00 a 18:00</p>
+      <p><i class="fas fa-envelope"></i> contacto@nutrigm.com</p>
+    </div>
+  </div>
+  <div class="footer-quote">
+    <p>“Tu salud comienza por tu plato.”</p>
+  </div>
+</footer>
+<script src="js/modalNotas.js"></script>
+</body>
+</html>
