@@ -10,8 +10,6 @@
   <title>Panel del Paciente | NutriGM</title>
 </head>
 <body>
-
-  
   <header>
     <nav class="navbar">
       <div class="logo-container">
@@ -29,8 +27,7 @@
   <main>
     <section class="paciente-panel">
       <div class="paciente-header">
-        <h2>Bienvenido, Juan Pérez</h2>
-        <!--<a href="sacarTurno.html" class="cta-button paciente-btn">Sacar nuevo turno</a>-->
+        <h2>Bienvenido, <span id="nombre-paciente"></span></h2>
         <button class="cta-button paciente-btn" onclick="location.href='sacarTurno.html'">Sacar nuevo turno</button>
       </div>
 
@@ -38,9 +35,8 @@
       <div class="paciente-datos">
         <h3>Tus datos</h3>
         <ul>
-          <li><strong>Nombre:</strong> Juan Pérez</li>
-          <li><strong>Email:</strong> juanperez@gmail.com</li>
-          <li><strong>Edad:</strong> 28 años</li>
+			<li><strong>Nombre:</strong> <span id="dato-nombre"></span></li>
+			 <li><strong>Email:</strong> <span id="dato-email"></span></li>
         </ul>
       </div>
 
@@ -90,6 +86,19 @@
       <p>“Tu salud comienza por tu plato.”</p>
     </div>
   </footer>
+  <script>
+    const usuario = JSON.parse(localStorage.getItem("usuario"));
+
+    if (usuario) {
+      // Header
+      const h2 = document.querySelector(".paciente-header h2");
+      h2.textContent = `Bienvenido, ${usuario.email} `;
+
+      // Datos
+      document.getElementById("dato-nombre").textContent = `${usuario.nombre} ${usuario.apellido}`;
+      document.getElementById("dato-email").textContent = usuario.email;
+    }
+  </script>
 
 </body>
 </html>

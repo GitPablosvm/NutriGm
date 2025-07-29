@@ -26,13 +26,14 @@
   <main class="registro-container">
     <h2>Iniciar sesión</h2>
     <form id="login-form">
-      <input type="text" name="dni" placeholder="DNI" required />
+      <input type="text" id="email" placeholder="Email" required />
       <div class="password-container">
         <input type="password" id="login-password" placeholder="Contraseña" required />
         <i class="fas fa-eye toggle-password" onclick="togglePassword.call(this)"></i>
       </div>
       <button type="submit">Iniciar sesión</button>
     </form>
+	<div id="mensaje" style="margin-top: 10px; font-weight: bold;"></div>
     <p class="registro-login">¿No tenés cuenta? <a href="registrar.html">Registrate</a>.</p>
   </main>
 
@@ -69,5 +70,6 @@
   </footer>
 
   <script src="js/VistaPassword.js"></script>
+  <script src="js/iniciarSesion.js"></script>
 </body>
 </html>

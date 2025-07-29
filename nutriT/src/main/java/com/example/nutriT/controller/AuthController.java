@@ -45,4 +45,5 @@ public class AuthController {
         UsuarioDto dto = usuarioService.buscarPorEmail(email);
         return ResponseEntity.ok(dto);
     }
+
 }
